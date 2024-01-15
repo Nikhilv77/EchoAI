@@ -35,6 +35,7 @@ export const Sidebar = ({ id,routeToChatHistory,routeToNewChat }) => {
     <>
       <div ref={sidebarRef} className="sidebar-chat-history">
         <svg
+        style={{ WebkitTapHighlightColor: 'transparent'}} 
           onClick={closeSidebarHandler}
           fill="skyblue"
           className="sidebar-close"
