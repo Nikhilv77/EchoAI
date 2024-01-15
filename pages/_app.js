@@ -1,14 +1,15 @@
-import Head from "next/head";
-import "../styles/globals.css";
+import Head from 'next/head';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+import '../styles/globals.css';
+import { ThemeProvider } from 'context/context';
 
 function App({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <link rel="icon" href="/favicon.png" />
-      </Head>
+    <UserProvider>
+      <ThemeProvider>
       <Component {...pageProps} />
-    </>
+      </ThemeProvider>
+    </UserProvider>
   );
 }
 
