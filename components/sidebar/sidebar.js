@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useRef,useEffect, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 
 export const Sidebar = ({ id,routeToChatHistory,routeToNewChat }) => {
   const router = useRouter();
   const [historyList, setHistoryList] = useState([]);
+  const sidebarRef = useRef(null);
+  const backdropRef = useRef(null);
   useEffect(() => {
     async function getChats() {
       const chats = await fetch("/api/Question/getQuestions", {
@@ -23,21 +25,15 @@ export const Sidebar = ({ id,routeToChatHistory,routeToNewChat }) => {
     }
     getChats();
   }, [id]);
-
   const closeSidebarHandler = () => {
-    const closeButton = document.getElementsByClassName("sidebar-close")[0];
-    closeButton.addEventListener("click", () => {
-      const sidebar = (document.getElementsByClassName(
-        "sidebar-chat-history"
-      )[0].style.display = "none");
-      document.getElementsByClassName("sidebar-backdrop")[0].style.display =
-        "none";
-    });
+    sidebarRef.current.style.display = "none";
+    backdropRef.current.style.display = "none";
   };
+
 
   return (
     <>
-      <div className="sidebar-chat-history">
+      <div ref={sidebarRef} className="sidebar-chat-history">
         <svg
           onClick={closeSidebarHandler}
           fill="skyblue"
@@ -54,7 +50,10 @@ export const Sidebar = ({ id,routeToChatHistory,routeToNewChat }) => {
         <div className="sidebar-new-chat">
           <div
             title="Click here to open new chat window"
-            onClick={routeToNewChat}
+            onClick={()=>{
+              routeToNewChat();
+              closeSidebarHandler();
+            }}
           >
             <Link
               style={{
@@ -99,7 +98,10 @@ export const Sidebar = ({ id,routeToChatHistory,routeToNewChat }) => {
             return (
               <div
                 key={history._id}
-                onClick={()=>{routeToChatHistory(history._id)}}
+                onClick={()=>{
+                  routeToChatHistory(history._id)
+                  closeSidebarHandler();
+                }}
                 className={`sidebar-old-chats-content ${
                   history._id === id ? "sidebar-active-history-link" : ""
                 }`}
@@ -170,19 +172,9 @@ export const Sidebar = ({ id,routeToChatHistory,routeToNewChat }) => {
         </div>
       </div>
       <div
+      ref={backdropRef}
         className="sidebar-backdrop"
-        onClick={() => {
-          document
-            .getElementsByClassName("sidebar-backdrop")[0]
-            .addEventListener("click", () => {
-              const sidebar = (document.getElementsByClassName(
-                "sidebar-chat-history"
-              )[0].style.display = "none");
-              document.getElementsByClassName(
-                "sidebar-backdrop"
-              )[0].style.display = "none";
-            });
-        }}
+      onClick={closeSidebarHandler}
       ></div>
     </>
   );
