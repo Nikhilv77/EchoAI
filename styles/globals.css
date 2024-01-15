@@ -573,7 +573,7 @@ text-decoration: none;
 .sidebar-chat-history{
   background-color: var(--chathistory-bg);
   width: 15rem;
-  height: 100vh;
+  height: 90vh;
   display: none;
   transition: background-color 0.3s ease;
   position: absolute;
@@ -593,7 +593,7 @@ text-decoration: none;
  .sidebar-old-chats{
   overflow-y: auto;
   color: var(--homepaage-login-color);
-  height: 63vh;
+  height: 53vh;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
  }
