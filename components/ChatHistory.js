@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { IoArrowBackOutline } from 'react-icons/io5';
 import { FaEdit } from "react-icons/fa"
 import { Sidebar } from "./sidebar";
-import Image from "next/image";
+
 
 export const ChatHistory = ({id,routeToChatHistory,routeToNewChat})=>{
   const router = useRouter();
@@ -49,7 +49,7 @@ return(
   <div className="old-chats">
     
     {historyList.length<=0 && 
-    <div title="No history found!" className="nothing-here"><Image className="nothing-here-image" src="/Nothing.webp"></Image></div>}
+    <div title="No history found!" className="nothing-here"><img className="nothing-here-image" src="/Nothing.webp"></img></div>}
     {historyList.map((history)=>{
       return(
         <div  key={history._id} onClick={()=>{routeToChatHistory(history._id)}}  className={`old-chats-content ${history._id === id?'active-history-link' : ""}`}>

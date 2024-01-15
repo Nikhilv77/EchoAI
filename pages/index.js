@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import {useUser} from '@auth0/nextjs-auth0/client'
 import { getSession } from "@auth0/nextjs-auth0";
-import Image from "next/image";
+
 
 export default function Home() {
   const{user,isLoading,error} = useUser();
@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       <video className="homepage-video" src="/Homepage-background-video.mp4" loop autoPlay muted></video>
       <div className="homepage-content">
-       <Image src="/favicon.png" alt="" />
+       <img src="/favicon.png" alt="" />
        <div className="homepage-container-info">
       <h1>Hello, I am EchoAI.</h1>
       <div><span id="typing-text">Your personal AI assistant.

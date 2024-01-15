@@ -140,7 +140,7 @@ html, body {
   display: grid;
   place-items: center;
 }
-.homepage-content img{
+.homepage-content Image{
  max-height: 8rem;
  max-width: 8rem;
 }
@@ -490,7 +490,7 @@ padding: 1.5rem;
   align-items: center;
 
  }
- .nothing-here-image{
+ .nothing-here-img{
   height: 100%;
   width: 100%;
   max-width: 15rem;
