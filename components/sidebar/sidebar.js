@@ -3,14 +3,14 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 
-export const Sidebar = ({ id }) => {
+export const Sidebar = ({ id,routeToChatHistory,routeToNewChat }) => {
   const router = useRouter();
   const [historyList, setHistoryList] = useState([]);
   useEffect(() => {
     async function getChats() {
       const chats = await fetch("/api/Question/getQuestions", {
         method: "POST",
-        headers: {
+        headers: { 
           "Content-Type": "application/json",
         },
       });
@@ -54,9 +54,7 @@ export const Sidebar = ({ id }) => {
         <div className="sidebar-new-chat">
           <div
             title="Click here to open new chat window"
-            onClick={() => {
-              router.push("/chat");
-            }}
+            onClick={routeToNewChat}
           >
             <Link
               style={{
@@ -101,9 +99,7 @@ export const Sidebar = ({ id }) => {
             return (
               <div
                 key={history._id}
-                onClick={() => {
-                  router.push(`/chat/${history._id}`);
-                }}
+                onClick={()=>{routeToChatHistory(history._id)}}
                 className={`sidebar-old-chats-content ${
                   history._id === id ? "sidebar-active-history-link" : ""
                 }`}
