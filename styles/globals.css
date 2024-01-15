@@ -140,7 +140,7 @@ html, body {
   display: grid;
   place-items: center;
 }
-.homepage-content Image{
+.homepage-content img{
  max-height: 8rem;
  max-width: 8rem;
 }
@@ -488,9 +488,9 @@ padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
  }
- .nothing-here-img{
+ .nothing-here-image{
   height: 100%;
   width: 100%;
   max-width: 15rem;
@@ -642,17 +642,16 @@ text-decoration: none;
   align-items: center;
 
  }
+
  .sidebar-nothing-here-image{
-  height: 100%;
-  width: 100%;
   max-width: 15rem;
   max-height: 15rem;
- 
+  height: 100%;
   margin: auto;
-  
- 
+  width: 100%;
  }
  
+
 .sidebar-question-span-title{
   overflow: hidden;
   white-space: nowrap;
