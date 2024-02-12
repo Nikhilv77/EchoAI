@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Echo AI
 
-## Getting Started
+Echo AI is a humorous chatbot application built with **Next.js**, **CSS**, **Auth0**, **MongoDB**, and **OpenAI Edge Stream**. Unlike traditional chatbots, Echo AI provides funny responses to user queries, making conversations entertaining and enjoyable.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- **Funny Responses**: Echo AI is designed to provide amusing and light-hearted responses to user queries, making interactions more engaging.
+- **Next.js Framework**: Built on Next.js, a popular React framework, ensuring efficient rendering and seamless client-side navigation.
+- **Auth0 Authentication**: Users can securely log in using Auth0 authentication, ensuring data privacy and user authentication.
+- **MongoDB Integration**: Utilizes MongoDB to store chat history and user preferences securely.
+- **OpenAI Edge Stream**: Harnesses the power of OpenAI Edge Stream for natural language processing, enabling intelligent and context-aware responses.
+- **Chat History**: Users can view their chat history, allowing them to revisit past conversations and relive memorable moments.
+- **Chat in Favorite Topics**: Users can engage in conversations on their favorite topics, fostering a personalized and enjoyable chatting experience.
+- **Theme Customization**: Echo AI offers theme customization options, allowing users to tailor the app's appearance to their preferences.
+- **Chat Window Management**: Users can easily manage chat windows, including deleting them for a clutter-free interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. **Authentication**: Users need to authenticate using Auth0 to access Echo AI's features.
+2. **Chatting**: Once authenticated, users can start chatting with Echo AI. They can type queries or engage in conversations on various topics.
+3. **History**: Users can access their chat history, allowing them to revisit past conversations and relive memorable moments.
+4. **Theme Customization**: Users have the option to customize the app's theme to suit their preferences.
+5. **Chat Window Management**: Users can manage chat windows, including deleting them when necessary.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Installation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To run Echo AI locally, follow these steps:
 
-## Learn More
+1. Clone the repository:
+git clone https://github.com/Nikhilv77/EchoAI.git
+2. Install dependencies
+3. Set up environment variables:
 
-To learn more about Next.js, take a look at the following resources:
+Update the `.env` file with your credentials for Auth0, MongoDB, and OpenAI Edge Stream.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Start the development server
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions are welcome! If you'd like to contribute to Echo AI, please fork the repository, make your changes, and submit a pull request.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
