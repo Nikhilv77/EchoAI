@@ -19,6 +19,6 @@ try {
   res.status(200).json({chats});
 } catch (error) {
   console.log(error);
-  res.status(500).jsong({message:'something went wrong!'})
+  res.status(500).json({message:'something went wrong!'})
 }
 }
